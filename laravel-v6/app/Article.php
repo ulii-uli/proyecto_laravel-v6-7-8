@@ -33,6 +33,8 @@ class Article extends Model
     public function Image(){
         return $this->hasMany('App\Images', 'foreign_key', 'img_id');
     }
+    
+
 
    
 }
