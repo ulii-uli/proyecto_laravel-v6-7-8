@@ -18,6 +18,7 @@ class CreateImagensTable extends Migration
             $table->string('name');
             $table->string('tag');
             $table->string('imag');
+            //llaves foranea
             $table->unsignedInteger('produc_id');
             $table->foreign('produc_id')->references('id')->on('productos');
             $table->timestamps();
