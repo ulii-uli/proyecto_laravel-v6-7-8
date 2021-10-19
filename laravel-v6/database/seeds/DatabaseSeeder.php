@@ -1,9 +1,11 @@
 <?php
 
 use App\Category;
+use App\imagen;
 use Illuminate\Database\Seeder;
 
 use App\Post;
+use App\producto;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +18,11 @@ class DatabaseSeeder extends Seeder
     { 
         factory(Category::class,10)->create();
         factory(Post::class,10)->create();
+
+        
+        factory(producto::class,10)->create();
+        factory(imagen::class,10)->create();
+       
         
 
         
