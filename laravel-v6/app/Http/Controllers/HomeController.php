@@ -1,13 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+/* mandamos a llamar a nuestro modelos */
 use App\User;
 use App\Category;
 use App\Images;
 use App\Article;
-
 class HomeController extends Controller
 {
     /**
@@ -17,7 +15,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
+        
     }
 
     /**
@@ -32,9 +31,7 @@ class HomeController extends Controller
         $categoryes = Category::count();
         $images = Images::count();
         $articles = Article::count();
-        //dd ($articles);
-        //dd(User::count());
-        //dd ($images);
+        
         return view('index', [
             'users' => $users,
             'categoryes' => $categoryes,
@@ -42,8 +39,5 @@ class HomeController extends Controller
             'articles' => $articles
 
         ]);
-    }
-
-    
-    
+    }  
 }

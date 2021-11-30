@@ -8,7 +8,7 @@ class ControllerArticle extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class ControllerArticle extends Controller
     public function index()
     {
 
-        $articles = Article::all();
+        $articles = Article::latest()->paginate(1);
         return view('articles.index',[
             'articles'=> $articles
             ]);

@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    // proteger rutas con un constructor auth
-
-    public function __construct()
+   public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
+      
+       
     }
 /* metod index user */
     public function index(){
