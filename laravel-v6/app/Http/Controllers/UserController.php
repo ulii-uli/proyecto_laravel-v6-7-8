@@ -10,7 +10,6 @@ class UserController extends Controller
     {
         $this->middleware(['auth','verified']);
       
-       
     }
 /* metod index user */
     public function index(){

@@ -11,12 +11,13 @@ $factory->define(Post::class, function (Faker $faker) {
     return [
         //
         
-        'title'=>$this->faker->sentence,
+        /*'title'=>$this->faker->sentence,
         'slug'=>$this->faker->slug,
         'description'=>$this->faker->sentence,
         'image'=>$this->faker->imageUrl(1280,730),
         'metatag'=>$this->faker->text(7),
         //declaracion de llaves foraneas
         'category_id'=> Category::all()->random()->id
+        */
     ];
 });

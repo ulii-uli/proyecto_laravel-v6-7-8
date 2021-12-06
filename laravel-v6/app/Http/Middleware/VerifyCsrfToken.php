@@ -19,6 +19,8 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+    'auth/facebook/callback',
+    'auth/google/callback',
+    'http://127.0.0.1:8000/'
     ];
 }

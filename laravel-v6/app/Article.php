@@ -3,9 +3,8 @@
 namespace App;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
-/* Modelos a ocupar  */
 use App\Category;
-use App\Images;
+
 
 class Article extends Model
 {
@@ -33,7 +32,15 @@ class Article extends Model
     public function Image(){
         return $this->hasMany('App\Images', 'foreign_key', 'img_id');
     }
-    
+    /**
+    * Get the user that owns the Article
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
 
    

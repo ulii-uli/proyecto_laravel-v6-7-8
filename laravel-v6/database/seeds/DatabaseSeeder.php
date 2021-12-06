@@ -1,11 +1,10 @@
 <?php
 
 use App\Category;
-use App\imagen;
+use App\Images;
+use App\Article;
 use Illuminate\Database\Seeder;
 
-use App\Post;
-use App\producto;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,13 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     { 
+       /* factory(Category::class,10)->create();
+        factory(Post::class,10)->create();*/
+
+    
         factory(Category::class,10)->create();
-        factory(Post::class,10)->create();
+        factory(Article::class,10)->create();
+        factory(Images::class,10)->create();
 
         
-        factory(producto::class,10)->create();
-        factory(imagen::class,10)->create();
-       
         
 
         

@@ -19,5 +19,8 @@ class Images extends Model
         return $this->belongsTo('Article::class','foreing_key','img_id');
     }
 
-  
+    public function post()
+    {
+        return $this->belongsTo('App\Article');
+    }
 }

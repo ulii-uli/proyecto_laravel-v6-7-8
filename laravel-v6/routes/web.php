@@ -14,6 +14,9 @@
 
 /* USUARIOS */
 /* index lista */
+
+/* Usuarios*/
+/* get obtenemos los  datos en BD del usuario con la funcion index*/
 Route::get('/users','UserController@index');
 /* store guarda datos en BD */
 Route::post('/users', 'UserController@store')->name('user.store');
@@ -38,15 +41,16 @@ Route::get('/articles/{$id}','ControllerArticle@show');
 
 Route::post('/images', 'ImagesController@store')->name('images.store');
 /* Auth Routes */
-
-Auth::routes();
-Route::get('/', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Auth::routes();
 
-/* Email MailTrap */
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/*  Email MailTrap */
 Route::get('enviar', ['as' => 'enviar', function () {
 
     $data = ['link' => 'http://styde.net&#39'];
@@ -61,9 +65,11 @@ Route::get('enviar', ['as' => 'enviar', function () {
     
     return "Se envío el email";
     }]);
-    /*verificacion de seccion de la cuenta */
+    
 
-
+/* para verificar cuenta */
 Auth::routes(['verify' => true]);
-Auth::routes(); 
+
+Auth::routes();
+
 Route::get('/home', 'HomeController@index')->name('home');
