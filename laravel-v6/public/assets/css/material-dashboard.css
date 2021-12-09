@@ -4,7 +4,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
   --bs-blue: #63B3ED;
   --bs-indigo: #596CFF;
   --bs-purple: #6f42c1;
@@ -17534,4 +17534,17 @@ pre[class*="language-"] {
 /*# sourceMappingURL=material-dashboard.css.map */
 .inputborder{
   border-radius: 2px !important;  
+}
+
+#wrapper
+{
+ text-align:center;
+ margin:0 auto;
+ padding:0px;
+ width:0 auto;
+}
+#output_image
+{
+ max-width:200px;
+ max-height:200px;
 }
